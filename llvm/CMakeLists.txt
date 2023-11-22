@@ -62,17 +62,17 @@ project(LLVM
 # OptSched
 ####################################################################
 
-set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};/opt/rocm-5.4.1/lib/cmake")
+set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};/opt/rocm/lib/cmake")
 set(CMAKE_CXX_STANDARD "17" CACHE STRING "" FORCE)
-set(AMDGPU_TARGETS "gfx906" CACHE STRING "AMD GPU targets to compile for" FORCE)
-find_package(hip REQUIRED CONFIG PATHS /opt/rocm-5.4.1)
-include_directories("/opt/rocm-5.4.1/include")
+set(AMDGPU_TARGETS "$ENV{AMDGPU_ARCH}" CACHE STRING "AMD GPU targets to compile for" FORCE)
+find_package(hip REQUIRED CONFIG PATHS /opt/rocm)
+include_directories("/opt/rocm/include")
 message(STATUS "HIP_COMPILER: ${HIP_COMPILER}")
 message(STATUS "HIP_CXX_COMPILER: ${HIP_CXX_COMPILER}")
 message(STATUS "HIP_LIB: ${HIP_LIBRARIES}")
 
-find_package(hiprand REQUIRED CONFIG PATHS /opt/rocm-5.4.1/)
-include_directories("/opt/rocm-5.4.1/hiprand/include" "/opt/rocm-5.4.1/rocrand/include")
+find_package(hiprand REQUIRED CONFIG PATHS /opt/rocm/)
+include_directories("/opt/rocm/hiprand/include" "/opt/rocm/rocrand/include")
 
 ####################################################################
 
