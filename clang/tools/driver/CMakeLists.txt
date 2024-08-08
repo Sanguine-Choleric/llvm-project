@@ -50,9 +50,9 @@ clang_target_link_libraries(clang
 # OptSched
 ####################################################################
 
-target_link_options(clang PRIVATE -fgpu-rdc --hip-link)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fgpu-rdc")
-clang_target_link_libraries(clang PRIVATE ${HIP_LIBRARIES})
+#target_link_options(clang PRIVATE -fgpu-rdc --hip-link)
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fgpu-rdc")
+#clang_target_link_libraries(clang PRIVATE ${HIP_LIBRARIES})
 
 ####################################################################
 
